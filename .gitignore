@@ -1,6 +1,7 @@
 /.metadata
 /.settings
 /bin
-/target
+/target/*
+!/target/github-download-*-jar-with-dependencies.jar
 .classpath
 .project

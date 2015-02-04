@@ -38,6 +38,33 @@
           <target>1.7</target>
         </configuration>
       </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>org.poverty_action.github.GitHubDownload</mainClass>
+            </manifest>
+            <manifestEntries>
+              <JCabi-Version>${jcabi.version}</JCabi-Version>
+              <JCabi-Build>${jcabi.build}</JCabi-Build>
+              <JCabi-Date>${jcabi.date}</JCabi-Date>
+            </manifestEntries>
+          </archive>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
   <dependencies>
